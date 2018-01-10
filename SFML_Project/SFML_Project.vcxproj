@@ -124,13 +124,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="EventManager.cpp" />
+    <ClCompile Include="Source\Managers\EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Source\Utilities\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EventManager.h" />
+    <ClInclude Include="Source\Managers\EventManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Source\Utilities\Window.h" />
   </ItemGroup>
@@ -139,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Fonts\arial.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Configurations\keys.cfg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
