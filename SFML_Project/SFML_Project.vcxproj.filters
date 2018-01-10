@@ -48,6 +48,6 @@
     <Font Include="Resources\Fonts\arial.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Configurations\keys.cfg.txt" />
+    <Text Include="Configurations\keys.cfg" />
   </ItemGroup>
 </Project>

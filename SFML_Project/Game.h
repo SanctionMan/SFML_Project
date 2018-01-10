@@ -1,5 +1,9 @@
 #pragma once
+#include <SFML/Graphics/Texture.hpp>
+#include <SFML/Graphics/Sprite.hpp>
+#include <SFML/System.hpp>
 #include "Source/Utilities/Window.h"
+
 
 class Game
 {
@@ -15,12 +19,15 @@ public:
 	void RestartClock();
 
 	Window* GetWindow();
+
+	//Testing
+	void MoveSprite(EventDetails* details);
 private:
 	Window m_window;
 	sf::Clock m_clock;
 	float m_elapsed;
 
-	sf::CircleShape dot;
-
+	sf::Texture m_texture;
+	sf::Sprite m_sprite;
 };
 

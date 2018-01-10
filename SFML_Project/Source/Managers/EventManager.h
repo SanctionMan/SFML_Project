@@ -94,6 +94,7 @@ public:
 
 	bool AddBinding(Binding *binding);
 	bool RemoveBinding(std::string name);
+	void ShowBindings();
 
 	void SetFocus(const bool& focus);
 

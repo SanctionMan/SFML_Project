@@ -9,9 +9,13 @@ Game::Game()
 	srand(time(nullptr));
 	m_elapsed = 0.0f;
 
-	dot.setPosition(m_window.GetWindowSize().x / 2, m_window.GetWindowSize().y / 2);
-	dot.setRadius(20);
-	dot.setFillColor(sf::Color::Cyan);
+	m_texture.loadFromFile("Resources/Sprites/Mushroom.png");
+	m_sprite.setTexture(m_texture);
+	m_sprite.setOrigin(m_texture.getSize().x / 2, m_texture.getSize().y / 2);
+	m_sprite.setPosition(0, 0);
+
+	m_window.GetEventManager()->AddCallback("Move", &Game::MoveSprite, this);
+
 }
 
 
@@ -33,7 +37,7 @@ void Game::Update()
 void Game::Render()
 {
 	m_window.DrawStart();
-	m_window.Draw(dot);
+	m_window.GetRenderWindow()->draw(m_sprite);
 	m_window.DrawEnd();
 
 }
@@ -51,4 +55,11 @@ void Game::RestartClock()
 Window* Game::GetWindow()
 {
 	return &m_window;
+}
+
+void Game::MoveSprite(EventDetails* details)
+{
+	sf::Vector2i mousepos = m_window.GetEventManager()->GetMousePos(m_window.GetRenderWindow());
+	m_sprite.setPosition(mousepos.x, mousepos.y);
+	std::cout << "Moving Sprite: " << mousepos.x << ":" << mousepos.y << std::endl;
 }

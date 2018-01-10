@@ -37,6 +37,14 @@ bool EventManager::RemoveBinding(std::string name)
 	return true;
 }
 
+void EventManager::ShowBindings()
+{
+	for (auto &iter : m_bindings)
+	{
+		std::cout << iter.first.c_str() << "|" << iter.second->m_details.m_keyCode << "|" << iter.second->c << std::endl;
+	}
+}
+
 void EventManager::SetFocus(const bool& focus)
 {
 	m_hasFocus = focus;
@@ -134,10 +142,13 @@ void EventManager::Update()
 
 void EventManager::LoadBindings()
 {
+	std::cout << "------------------" << std::endl;
+	std::cout << "Bindings" << std::endl;
+	std::cout << "------------------" << std::endl;
 	std::string delimiter = ":";
 
 	std::ifstream bindings;
-	bindings.open("Configurations/keys.cfg.txt");
+	bindings.open("ConfigurationS/keys.cfg");
 	if (!bindings.is_open()) { std::cout << "! Failed loading keys.cfg." << std::endl; return; }
 	std::string line;
 	while (std::getline(bindings, line)) {
@@ -158,10 +169,13 @@ void EventManager::LoadBindings()
 			eventInfo.m_code = code;
 
 			bind->BindEvent(type, eventInfo);
+			std::cout << callbackName << "|" << int(type) << ":"<<code << std::endl;
 		}
 
 		if (!AddBinding(bind)) { delete bind; }
 		bind = nullptr;
 	}
 	bindings.close();
+
+	ShowBindings();
 }
