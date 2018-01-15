@@ -26,23 +26,16 @@ enum class EventType
 
 struct EventInfo
 {
-	EventInfo()
-	{
-		m_code = 0;
-	}
-	EventInfo(int event)
-	{
-		m_code = event;
-	}
-	union
-	{
+	EventInfo() { m_code = 0; }
+	EventInfo(int l_event) { m_code = l_event; }
+	union {
 		int m_code;
 	};
 };
 
 struct EventDetails {
-	EventDetails(const std::string& bindName)
-	: m_name(bindName) 
+	EventDetails(const std::string& l_bindName)
+	: m_name(l_bindName) 
 	{
 		Clear();
 	}
@@ -54,7 +47,8 @@ struct EventDetails {
 	int m_mouseWheelDelta;
 	int m_keyCode; // Single key code.
 
-	void Clear() {
+	void Clear() 
+	{
 		m_size = sf::Vector2i(0, 0);
 		m_textEntered = 0;
 		m_mouse = sf::Vector2i(0, 0);
@@ -66,14 +60,13 @@ struct EventDetails {
 using Events = std::vector<std::pair<EventType, EventInfo>>;
 
 struct Binding {
-	Binding(const std::string& name) 
-	: m_name(name), m_details(name), c(0)
+	Binding(const std::string& l_name) 
+		: m_name(l_name), 
+		m_details(l_name), 
+		c(0) {}
+	void BindEvent(EventType l_type, EventInfo l_info = EventInfo()) 
 	{
-		
-	}
-	void BindEvent(EventType type, EventInfo info = EventInfo()) 
-	{
-		m_events.emplace_back(type, info);
+		m_events.emplace_back(l_type, l_info);
 	}
 
 	Events m_events;
@@ -92,32 +85,32 @@ public:
 	EventManager();
 	~EventManager();
 
-	bool AddBinding(Binding *binding);
-	bool RemoveBinding(std::string name);
+	bool AddBinding(Binding *l_binding);
+	bool RemoveBinding(std::string l_name);
 	void ShowBindings();
 
-	void SetFocus(const bool& focus);
+	void SetFocus(const bool& l_focus);
 
 	// Needs to be defined in the header!
 	template<class T>
-	bool AddCallback(const std::string& name,
-		void(T::*func)(EventDetails*), T* instance)
+	bool AddCallback(const std::string& l_name,
+		void(T::*l_func)(EventDetails*), T* l_instance)
 	{
-		auto temp = std::bind(func, instance, std::placeholders::_1);
-		return m_callbacks.emplace(name, temp).second;
+		auto temp = std::bind(l_func, l_instance, std::placeholders::_1);
+		return m_callbacks.emplace(l_name, temp).second;
 	}
 
-	void RemoveCallback(const std::string& name) 
+	void RemoveCallback(const std::string& l_name) 
 	{
-		m_callbacks.erase(name);
+		m_callbacks.erase(l_name);
 	}
 
-	void HandleEvent(sf::Event& event);
+	void HandleEvent(sf::Event& l_event);
 	void Update();
 
-	sf::Vector2i GetMousePos(sf::RenderWindow* window = nullptr) 
+	sf::Vector2i GetMousePos(sf::RenderWindow* l_window = nullptr) 
 	{
-		return (window ? sf::Mouse::getPosition(*window) : sf::Mouse::getPosition());
+		return (l_window ? sf::Mouse::getPosition(*l_window) : sf::Mouse::getPosition());
 	}
 private:
 	void LoadBindings();

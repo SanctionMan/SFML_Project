@@ -33,19 +33,13 @@ void Window::Draw(sf::Drawable& drawable)
 void Window::Update()
 {
 	sf::Event event;
-	
+
 	while (m_window.pollEvent(event)) {
-		if (event.type == sf::Event::LostFocus)
-		{
-			m_isFocused = false; m_eventManager.SetFocus(false);
-		}
-		else if (event.type == sf::Event::GainedFocus)
-		{
-			m_isFocused = true; m_eventManager.SetFocus(true);
-		}
+		if (event.type == sf::Event::LostFocus) { m_isFocused = false; m_eventManager.SetFocus(false); }
+		else if (event.type == sf::Event::GainedFocus) { m_isFocused = true; m_eventManager.SetFocus(true); }
 		m_eventManager.HandleEvent(event);
 	}
-	
+
 	m_eventManager.Update();
 }
 
