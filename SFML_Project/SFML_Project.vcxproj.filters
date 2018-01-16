@@ -27,6 +27,12 @@
     <ClCompile Include="Source\Utilities\Window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Managers\StateManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Managers\GameStates\State_Intro.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -38,9 +44,24 @@
     <ClInclude Include="Source\Utilities\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Managers\StateManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Managers\GameStates\BaseState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Managers\SharedContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Managers\GameStates\State_Intro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Sprites\Mushroom.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Sprites\intro.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

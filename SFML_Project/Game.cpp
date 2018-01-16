@@ -3,19 +3,15 @@
 
 
 Game::Game()
-: m_window("Snake", sf::Vector2u(800, 600))
+: m_window("Test Game", sf::Vector2u(800, 600)), m_stateManager(&m_context)
 {
 	m_clock.restart();
-	srand(time(nullptr));
-	m_elapsed = 0.0f;
+	srand(unsigned int(time(nullptr)));
 
-	m_texture.loadFromFile("Resources/Sprites/Mushroom.png");
-	m_sprite.setTexture(m_texture);
-	m_sprite.setOrigin(m_texture.getSize().x / 2, m_texture.getSize().y / 2);
-	m_sprite.setPosition(0, 0);
+	m_context.m_window = &m_window;
+	m_context.m_eventManager = m_window.GetEventManager();
 
-	m_window.GetEventManager()->AddCallback("Move", &Game::MoveSprite, this);
-
+	m_stateManager.SwitchTo(StateType::Intro);
 }
 
 
@@ -23,43 +19,26 @@ Game::~Game()
 {
 }
 
-void Game::HandleInput()
-{
-	// Input handling.
-
-}
-
 void Game::Update()
 {
 	m_window.Update();
+	m_stateManager.Update(m_elapsed);
 }
 
 void Game::Render()
 {
 	m_window.DrawStart();
-	m_window.GetRenderWindow()->draw(m_sprite);
+	m_stateManager.Draw();
 	m_window.DrawEnd();
 
 }
 
-sf::Time Game::GetElapsed()
+void Game::LateUpdate()
 {
-	return m_clock.getElapsedTime();
+	m_stateManager.ProcessRequests();
+	RestartClock();
 }
 
-void Game::RestartClock()
-{
-	m_elapsed += m_clock.restart().asSeconds();
-}
-
-Window* Game::GetWindow()
-{
-	return &m_window;
-}
-
-void Game::MoveSprite(EventDetails* details)
-{
-	sf::Vector2i mousepos = m_window.GetEventManager()->GetMousePos(m_window.GetRenderWindow());
-	m_sprite.setPosition(mousepos.x, mousepos.y);
-	std::cout << "Moving Sprite: " << mousepos.x << ":" << mousepos.y << std::endl;
-}
+sf::Time Game::GetElapsed(){ return m_clock.getElapsedTime(); }
+Window* Game::GetWindow(){ return &m_window; }
+void Game::RestartClock(){ m_elapsed = m_clock.restart(); }

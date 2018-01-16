@@ -128,13 +128,20 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Source\Utilities\Window.cpp" />
+    <ClCompile Include="Source\Managers\StateManager.cpp" />
+    <ClCompile Include="Source\Managers\GameStates\State_Intro.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Managers\EventManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Source\Managers\GameStates\BaseState.h" />
+    <ClInclude Include="Source\Managers\SharedContext.h" />
     <ClInclude Include="Source\Utilities\Window.h" />
+    <ClInclude Include="Source\Managers\StateManager.h" />
+    <ClInclude Include="Source\Managers\GameStates\State_Intro.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Resources\Sprites\intro.png" />
     <Image Include="Resources\Sprites\Mushroom.png" />
   </ItemGroup>
   <ItemGroup>
