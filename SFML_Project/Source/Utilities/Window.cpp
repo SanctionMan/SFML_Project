@@ -38,18 +38,6 @@ void Window::Update()
 		if (event.type == sf::Event::LostFocus) { m_isFocused = false; m_eventManager.SetFocus(false); }
 		else if (event.type == sf::Event::GainedFocus) { m_isFocused = true; m_eventManager.SetFocus(true); }
 		m_eventManager.HandleEvent(event);
-		//TESTING KEY CODES
-		switch (event.type)
-		{
-			// key pressed
-		case sf::Event::KeyPressed:
-			std::cout << "KeyPressed:" << event.key.code << std::endl;
-				break;
-			// we don't process other types of events
-		default:
-			break;
-		}
-		//TESTING KEY CODES
 	}
 
 	m_eventManager.Update();
@@ -104,6 +92,9 @@ void Window::Setup(const std::string title, const sf::Vector2u& size)
 	m_isFullscreen = false;
 	m_isRunning = true;
 	m_isFocused = true;
+
+	m_eventManager.AddCallback(StateType(0), "Fullscreen_toggle", &Window::ToggleFullscreen, this);
+	m_eventManager.AddCallback(StateType(0), "Window_close", &Window::Close, this);
 
 	Create();
 }

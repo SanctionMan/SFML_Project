@@ -14,16 +14,16 @@ void State_Intro::OnCreate()
 {
 	m_timePassed = 0.0f;
 
-	sf::Vector2u windowSize = m_stateMgr->GetContext()->m_window->GetRenderWindow()->getSize();
+	sf::Vector2u windowSize = m_stateMgr->GetContext()->m_wind->GetRenderWindow()->getSize();
 
-	m_introTexture.loadFromFile("../../Resources/Sprites/intro.png");
+	m_introTexture.loadFromFile("Resources/Sprites/intro.png");
 	m_introSprite.setTexture(m_introTexture);
 	m_introSprite.setOrigin(m_introTexture.getSize().x / 2.0f,
 		m_introTexture.getSize().y / 2.0f);
 
 	m_introSprite.setPosition(windowSize.x / 2.0f, 0);
 
-	m_font.loadFromFile("../Fonts/arial.ttf");
+	m_font.loadFromFile("Resources/Fonts/arial.ttf");
 	m_text.setFont(m_font);
 	m_text.setString({ "Press SPACE to continue" });
 	m_text.setCharacterSize(15);
@@ -33,7 +33,7 @@ void State_Intro::OnCreate()
 	m_text.setPosition(windowSize.x / 2.0f, windowSize.y / 2.0f);
 
 	EventManager* evMgr = m_stateMgr->GetContext()->m_eventManager;
-	evMgr->AddCallback(StateType::Intro, "Intro_Continue", &State_Intro::Continue, this);
+	evMgr->AddCallback(StateType::Intro, "Intro_Continue", &State_Intro::Continues, this);
 }
 
 void State_Intro::OnDestroy()
@@ -62,7 +62,7 @@ void State_Intro::Update(const sf::Time& l_time)
 
 void State_Intro::Draw()
 {
-	sf::RenderWindow* window = m_stateMgr->GetContext()->m_window->GetRenderWindow();
+	sf::RenderWindow* window = m_stateMgr->GetContext()->m_wind->GetRenderWindow();
 
 	window->draw(m_introSprite);
 	if (m_timePassed >= 5.0f) {
@@ -70,11 +70,11 @@ void State_Intro::Draw()
 	}
 }
 
-void State_Intro::Continue(EventDetails* l_details)
+void State_Intro::Continues(EventDetails* l_details)
 {
 	if (m_timePassed >= 5.0f) {
-		//m_stateMgr->SwitchTo(StateType::MainMenu);
-		//m_stateMgr->Remove(StateType::Intro);
+		m_stateMgr->SwitchTo(StateType::MainMenu);
+		m_stateMgr->Remove(StateType::Intro);
 		std::cout << "MADE IT" << std::endl;
 	}
 }

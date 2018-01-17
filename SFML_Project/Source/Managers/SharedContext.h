@@ -2,10 +2,10 @@
 #include "../Utilities/Window.h"
 #include "EventManager.h"
 struct SharedContext {
-	SharedContext():m_window(nullptr), m_eventManager(nullptr)
+	SharedContext() : m_wind(nullptr), m_eventManager(nullptr)
 	{
 		
 	}
-	Window* m_window;
+	Window* m_wind;
 	EventManager* m_eventManager;
 };

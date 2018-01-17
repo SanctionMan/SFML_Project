@@ -8,7 +8,7 @@ Game::Game()
 	m_clock.restart();
 	srand(unsigned int(time(nullptr)));
 
-	m_context.m_window = &m_window;
+	m_context.m_wind = &m_window;
 	m_context.m_eventManager = m_window.GetEventManager();
 
 	m_stateManager.SwitchTo(StateType::Intro);

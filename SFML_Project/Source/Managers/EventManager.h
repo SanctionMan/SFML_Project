@@ -35,8 +35,7 @@ struct EventInfo
 
 struct EventDetails {
 	EventDetails(const std::string& l_bindName)
-	: m_name(l_bindName) 
-	{
+		: m_name(l_bindName) {
 		Clear();
 	}
 	std::string m_name;
@@ -47,8 +46,7 @@ struct EventDetails {
 	int m_mouseWheelDelta;
 	int m_keyCode; // Single key code.
 
-	void Clear() 
-	{
+	void Clear() {
 		m_size = sf::Vector2i(0, 0);
 		m_textEntered = 0;
 		m_mouse = sf::Vector2i(0, 0);
@@ -61,8 +59,8 @@ using Events = std::vector<std::pair<EventType, EventInfo>>;
 
 struct Binding {
 	Binding(const std::string& l_name) : m_name(l_name), m_details(l_name), c(0) {}
-	void BindEvent(EventType l_type, EventInfo l_info = EventInfo()) 
-	{
+	~Binding() {}
+	void BindEvent(EventType l_type, EventInfo l_info = EventInfo()) {
 		m_events.emplace_back(l_type, l_info);
 	}
 
@@ -73,11 +71,10 @@ struct Binding {
 	EventDetails m_details;
 };
 
-//Bindings
 using Bindings = std::unordered_map<std::string, Binding*>;
-//Callback container
+// Callback container.
 using CallbackContainer = std::unordered_map<std::string, std::function<void(EventDetails*)>>;
-//State callback container
+// State callback container.
 enum class StateType;
 using Callbacks = std::unordered_map<StateType, CallbackContainer>;
 
@@ -104,18 +101,12 @@ public:
 		return itr->second.emplace(l_name, temp).second;
 	}
 
-	bool RemoveCallback(StateType l_state, const std::string& l_name) 
-	{
+	bool RemoveCallback(StateType l_state, const std::string& l_name) {
 		auto itr = m_callbacks.find(l_state);
-		if (itr == m_callbacks.end())
-		{
-			return false;
-		}
+		if (itr == m_callbacks.end()) { return false; }
 		auto itr2 = itr->second.find(l_name);
-		if (itr2 == itr->second.end())
-		{
-			return false;
-		}
+		if (itr2 == itr->second.end()) { return false; }
+		itr->second.erase(l_name);
 		return true;
 	}
 

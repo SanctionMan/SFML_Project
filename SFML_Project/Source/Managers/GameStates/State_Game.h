@@ -2,11 +2,11 @@
 #include "BaseState.h"
 #include "../EventManager.h" //Must always have this in every state
 
-class State_Intro : public BaseState
+class State_Game : public BaseState
 {
 public:
-	State_Intro(StateManager* l_stateManager);
-	~State_Intro();
+	State_Game(StateManager* l_stateManager);
+	~State_Game();
 
 	void OnCreate();
 	void OnDestroy();
@@ -17,13 +17,12 @@ public:
 	void Update(const sf::Time& l_time);
 	void Draw();
 
-	void Continues(EventDetails* l_details);
+	void MainMenu(EventDetails* l_details);
+	void Pause(EventDetails* l_details);
 private:
-	sf::Texture m_introTexture;
-	sf::Sprite m_introSprite;
-	sf::Font m_font;
-	sf::Text m_text;
 
-	float m_timePassed;
+	sf::Texture m_texture;
+	sf::Sprite m_sprite;
+	sf::Vector2f m_increment;
 };
 

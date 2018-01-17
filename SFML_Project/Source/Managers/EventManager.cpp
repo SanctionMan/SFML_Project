@@ -1,7 +1,6 @@
 #include "EventManager.h"
 
-EventManager::EventManager()
-	: m_hasFocus(true)
+EventManager::EventManager() : m_currentState(StateType(0)), m_hasFocus(true)
 {
 	LoadBindings();
 }
@@ -121,7 +120,7 @@ void EventManager::Update()
 			switch (e_itr.first) {
 			case(EventType::Keyboard):
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(e_itr.second.m_code))) {
-					if (bind->m_details.m_keyCode != -1) {
+					if (bind->m_details.m_keyCode == -1) {
 						bind->m_details.m_keyCode = e_itr.second.m_code;
 					}
 					++(bind->c);
@@ -129,7 +128,7 @@ void EventManager::Update()
 				break;
 			case(EventType::Mouse):
 				if (sf::Mouse::isButtonPressed(sf::Mouse::Button(e_itr.second.m_code))) {
-					if (bind->m_details.m_keyCode != -1) {
+					if (bind->m_details.m_keyCode == -1) {
 						bind->m_details.m_keyCode = e_itr.second.m_code;
 					}
 					++(bind->c);
@@ -174,7 +173,7 @@ void EventManager::LoadBindings()
 	std::string delimiter = ":";
 
 	std::ifstream bindings;
-	bindings.open("keys.cfg");
+	bindings.open("Configurations/keys.cfg");
 	if (!bindings.is_open()) { std::cout << "! Failed loading keys.cfg." << std::endl; return; }
 	std::string line;
 	while (std::getline(bindings, line)) {

@@ -130,6 +130,9 @@
     <ClCompile Include="Source\Utilities\Window.cpp" />
     <ClCompile Include="Source\Managers\StateManager.cpp" />
     <ClCompile Include="Source\Managers\GameStates\State_Intro.cpp" />
+    <ClCompile Include="Source\Managers\GameStates\State_MainMenu.cpp" />
+    <ClCompile Include="Source\Managers\GameStates\State_Game.cpp" />
+    <ClCompile Include="Source\Managers\GameStates\State_Paused.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Managers\EventManager.h" />
@@ -139,6 +142,9 @@
     <ClInclude Include="Source\Utilities\Window.h" />
     <ClInclude Include="Source\Managers\StateManager.h" />
     <ClInclude Include="Source\Managers\GameStates\State_Intro.h" />
+    <ClInclude Include="Source\Managers\GameStates\State_MainMenu.h" />
+    <ClInclude Include="Source\Managers\GameStates\State_Game.h" />
+    <ClInclude Include="Source\Managers\GameStates\State_Paused.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Sprites\intro.png" />

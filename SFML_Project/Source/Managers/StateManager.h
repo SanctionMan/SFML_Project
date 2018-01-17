@@ -3,9 +3,12 @@
 #include <functional>
 #include <unordered_map>
 
+#include "SharedContext.h"
 #include "GameStates/BaseState.h"
 #include "GameStates/State_Intro.h"
-#include "SharedContext.h"
+#include "GameStates/State_MainMenu.h"
+#include "GameStates/State_Game.h"
+#include "GameStates/State_Paused.h"
 
 enum class StateType { Intro = 1, MainMenu, Game, Paused, GameOver, Credits };
 
