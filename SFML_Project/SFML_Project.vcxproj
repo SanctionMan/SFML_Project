@@ -135,6 +135,7 @@
     <ClCompile Include="Source\Managers\GameStates\State_Paused.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\GUI\Button.h" />
     <ClInclude Include="Source\Managers\EventManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Source\Managers\GameStates\BaseState.h" />
