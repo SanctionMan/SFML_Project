@@ -138,7 +138,10 @@
     <ClInclude Include="Source\Managers\EventManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Source\Managers\GameStates\BaseState.h" />
+    <ClInclude Include="Source\Managers\ResourceManager.h" />
     <ClInclude Include="Source\Managers\SharedContext.h" />
+    <ClInclude Include="Source\Managers\TextureManager.h" />
+    <ClInclude Include="Source\Utilities\Utilities.h" />
     <ClInclude Include="Source\Utilities\Window.h" />
     <ClInclude Include="Source\Managers\StateManager.h" />
     <ClInclude Include="Source\Managers\GameStates\State_Intro.h" />

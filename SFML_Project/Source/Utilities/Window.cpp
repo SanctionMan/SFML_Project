@@ -43,34 +43,20 @@ void Window::Update()
 	m_eventManager.Update();
 }
 
-bool Window::IsRunning()
-{
-	return m_isRunning;
-}
+bool Window::IsRunning(){ return m_isRunning; }
+bool Window::IsFullscreen(){ return m_isFullscreen; }
+bool Window::IsFocused(){ return m_isFocused; }
 
-bool Window::IsFullscreen()
+sf::RenderWindow* Window::GetRenderWindow(){ return &m_window; }
+sf::Vector2u Window::GetWindowSize(){ return m_windowSize; }
+EventManager* Window::GetEventManager(){ return &m_eventManager; }
+sf::FloatRect Window::GetViewSpace()
 {
-	return m_isFullscreen;
-}
-
-bool Window::IsFocused()
-{
-	return m_isFocused;
-}
-
-sf::RenderWindow* Window::GetRenderWindow()
-{
-	return &m_window;
-}
-
-sf::Vector2u Window::GetWindowSize()
-{
-	return m_windowSize;
-}
-
-EventManager* Window::GetEventManager()
-{
-	return &m_eventManager;
+	sf::Vector2f viewCenter(m_window.getView().getCenter());
+	sf::Vector2f viewSize(m_window.getView().getSize());
+	sf::Vector2f viewSizeHalf(viewSize.x / 2, viewSize.y / 2);
+	sf::FloatRect viewSpace(viewCenter - viewSizeHalf, viewSize);
+	return viewSpace;
 }
 
 void Window::ToggleFullscreen(EventDetails* details)
