@@ -1,5 +1,5 @@
 #include "State_Intro.h"
-#include "../StateManager.h" //Must always have this in every state
+#include "../Managers/StateManager.h" //Must always have this in every state
 
 
 State_Intro::State_Intro(StateManager* l_stateManager): BaseState(l_stateManager)

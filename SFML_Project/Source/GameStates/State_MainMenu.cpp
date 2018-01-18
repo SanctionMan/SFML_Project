@@ -1,5 +1,5 @@
 #include "State_MainMenu.h"
-#include "../StateManager.h" //Must always have this in every state
+#include "../Managers/StateManager.h" //Must always have this in every state
 
 State_MainMenu::State_MainMenu(StateManager* l_stateManager)
 	: BaseState(l_stateManager){}

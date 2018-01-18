@@ -30,25 +30,25 @@
     <ClCompile Include="Source\Managers\StateManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Managers\GameStates\State_Intro.cpp">
+    <ClCompile Include="Source\GameStates\State_Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Managers\GameStates\State_MainMenu.cpp">
+    <ClCompile Include="Source\GameStates\State_Intro.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Managers\GameStates\State_Game.cpp">
+    <ClCompile Include="Source\GameStates\State_MainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Managers\GameStates\State_Paused.cpp">
+    <ClCompile Include="Source\GameStates\State_Paused.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Managers\Animation\SpriteSheet.cpp">
+    <ClCompile Include="Source\Animation\AnimationBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Managers\Animation\AnimationBase.cpp">
+    <ClCompile Include="Source\Animation\AnimationDirectional.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Managers\Animation\AnimationDirectional.cpp">
+    <ClCompile Include="Source\Animation\SpriteSheet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,22 +65,7 @@
     <ClInclude Include="Source\Managers\StateManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Managers\GameStates\BaseState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Managers\SharedContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Managers\GameStates\State_Intro.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Managers\GameStates\State_MainMenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Managers\GameStates\State_Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Managers\GameStates\State_Paused.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Utilities\Utilities.h">
@@ -92,19 +77,31 @@
     <ClInclude Include="Source\Managers\TextureManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\GUI\Button.h">
+    <ClInclude Include="Source\GameStates\BaseState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Managers\Animation\SpriteSheet.h">
+    <ClInclude Include="Source\GameStates\State_Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Managers\Animation\AnimationBase.h">
+    <ClInclude Include="Source\GameStates\State_Intro.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Managers\Animation\AnimationDirectional.h">
+    <ClInclude Include="Source\GameStates\State_MainMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Managers\Animation\Directions.h">
+    <ClInclude Include="Source\GameStates\State_Paused.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Animation\AnimationBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Animation\AnimationDirectional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Animation\Directions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Animation\SpriteSheet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -127,6 +124,45 @@
     <Image Include="Resources\GUI\Wood_background.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Resources\Textures\bg1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\bg2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\bg3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\gradients.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\GUI_spritesheet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\intro.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\Mushroom.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\Paper_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\PlayerSheet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\RatSheet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\test_intro.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\tilesheet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\Wood_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Fonts\arial.ttf" />
@@ -137,5 +173,12 @@
   <ItemGroup>
     <None Include="Configurations\textures.cfg" />
     <None Include="Configurations\tiles.cfg" />
+    <None Include="Configurations\Characters\EnemyList.list" />
+    <None Include="Configurations\Characters\Player.char" />
+    <None Include="Configurations\Characters\Rat.char" />
+    <None Include="Configurations\Maps\map1.map" />
+    <None Include="Configurations\Maps\map2.map" />
+    <None Include="Configurations\Spritesheets\Player.sheet" />
+    <None Include="Configurations\Spritesheets\Rat.sheet" />
   </ItemGroup>
 </Project>

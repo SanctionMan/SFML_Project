@@ -1,6 +1,6 @@
 #pragma once
 #include "BaseState.h"
-#include "../EventManager.h" //Must always have this in every state
+#include "../Managers/EventManager.h" //Must always have this in every state
 
 class State_MainMenu : public BaseState
 {

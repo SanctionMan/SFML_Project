@@ -1,9 +1,9 @@
 #pragma once
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
-#include "../TextureManager.h"
+#include "../Managers/TextureManager.h"
+#include "../Utilities/Utilities.h"
 #include "AnimationDirectional.h"
-#include "../../Utilities/Utilities.h"
 #include <unordered_map>
 
 using Animations = std::unordered_map<std::string, AnimationBase*>;

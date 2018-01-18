@@ -1,6 +1,5 @@
 #include "State_Paused.h"
-#include "../StateManager.h" //Must always have this in every state
-
+#include "../Managers/StateManager.h" //Must always have this in every state
 
 
 State_Paused::State_Paused(StateManager* l_stateManager)

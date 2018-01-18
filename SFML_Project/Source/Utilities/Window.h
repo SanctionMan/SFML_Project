@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
-#include "../../Source/Managers/EventManager.h"
+#include "../Managers/EventManager.h"
 
 class Window 
 {

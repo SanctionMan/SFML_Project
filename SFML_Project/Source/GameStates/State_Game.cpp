@@ -1,5 +1,5 @@
 #include "State_Game.h"
-#include "../StateManager.h" //Must always have this in every state
+#include "../Managers/StateManager.h" //Must always have this in every state
 
 State_Game::State_Game(StateManager* l_stateManager)
 	: BaseState(l_stateManager){}
