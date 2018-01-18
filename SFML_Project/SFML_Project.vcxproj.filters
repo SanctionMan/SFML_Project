@@ -42,6 +42,15 @@
     <ClCompile Include="Source\Managers\GameStates\State_Paused.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Managers\Animation\SpriteSheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Managers\Animation\AnimationBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Managers\Animation\AnimationDirectional.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -86,6 +95,18 @@
     <ClInclude Include="Source\GUI\Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Managers\Animation\SpriteSheet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Managers\Animation\AnimationBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Managers\Animation\AnimationDirectional.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Managers\Animation\Directions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\Sprites\Mushroom.png">
@@ -94,11 +115,27 @@
     <Image Include="Resources\Sprites\intro.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Resources\GUI\gradients.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\GUI\GUI_spritesheet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\GUI\Paper_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\GUI\Wood_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Fonts\arial.ttf" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Configurations\keys.cfg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configurations\textures.cfg" />
+    <None Include="Configurations\tiles.cfg" />
   </ItemGroup>
 </Project>

@@ -79,7 +79,7 @@
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(SolutionDir)\SFML_Project\Dependencies\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-system-s-d.lib;sfml-window-s-d.lib;sfml-graphics-s-d.lib;sfml-network-s-d.lib;sfml-audio-s-d.lib;opengl32.lib;freetype.lib;jpeg.lib;winmm.lib;gdi32.lib;openal32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-system-s-d.lib;sfml-window-s-d.lib;sfml-graphics-s-d.lib;sfml-network-s-d.lib;sfml-audio-s-d.lib;opengl32.lib;Shlwapi.lib;freetype.lib;jpeg.lib;winmm.lib;gdi32.lib;openal32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -124,6 +124,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Managers\Animation\AnimationBase.cpp" />
+    <ClCompile Include="Source\Managers\Animation\AnimationDirectional.cpp" />
+    <ClCompile Include="Source\Managers\Animation\SpriteSheet.cpp" />
     <ClCompile Include="Source\Managers\EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -136,6 +139,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GUI\Button.h" />
+    <ClInclude Include="Source\Managers\Animation\AnimationBase.h" />
+    <ClInclude Include="Source\Managers\Animation\AnimationDirectional.h" />
+    <ClInclude Include="Source\Managers\Animation\Directions.h" />
+    <ClInclude Include="Source\Managers\Animation\SpriteSheet.h" />
     <ClInclude Include="Source\Managers\EventManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Source\Managers\GameStates\BaseState.h" />
@@ -151,6 +158,10 @@
     <ClInclude Include="Source\Managers\GameStates\State_Paused.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Resources\GUI\gradients.png" />
+    <Image Include="Resources\GUI\GUI_spritesheet.png" />
+    <Image Include="Resources\GUI\Paper_background.png" />
+    <Image Include="Resources\GUI\Wood_background.png" />
     <Image Include="Resources\Sprites\intro.png" />
     <Image Include="Resources\Sprites\Mushroom.png" />
   </ItemGroup>
@@ -159,6 +170,10 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="Configurations\keys.cfg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Configurations\textures.cfg" />
+    <None Include="Configurations\tiles.cfg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
