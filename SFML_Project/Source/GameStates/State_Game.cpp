@@ -8,7 +8,7 @@ State_Game::~State_Game(){}
 
 void State_Game::OnCreate()
 {
-	m_texture.loadFromFile("Resources/Sprites/Mushroom.png");
+	m_texture.loadFromFile("Resources/Textures/Mushroom.png");
 	m_sprite.setTexture(m_texture);
 	m_sprite.setPosition(0, 0);
 	m_increment = sf::Vector2f(400.0f, 400.0f);

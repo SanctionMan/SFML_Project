@@ -16,7 +16,7 @@ void State_Intro::OnCreate()
 
 	sf::Vector2u windowSize = m_stateMgr->GetContext()->m_wind->GetRenderWindow()->getSize();
 
-	m_introTexture.loadFromFile("Resources/Sprites/intro.png");
+	m_introTexture.loadFromFile("Resources/Textures/intro.png");
 	m_introSprite.setTexture(m_introTexture);
 	m_introSprite.setOrigin(m_introTexture.getSize().x / 2.0f,
 		m_introTexture.getSize().y / 2.0f);
@@ -75,6 +75,5 @@ void State_Intro::Continues(EventDetails* l_details)
 	if (m_timePassed >= 5.0f) {
 		m_stateMgr->SwitchTo(StateType::MainMenu);
 		m_stateMgr->Remove(StateType::Intro);
-		std::cout << "MADE IT" << std::endl;
 	}
 }
