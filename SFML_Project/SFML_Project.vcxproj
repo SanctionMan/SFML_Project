@@ -131,9 +131,15 @@
     <ClCompile Include="Source\GameStates\State_Intro.cpp" />
     <ClCompile Include="Source\GameStates\State_MainMenu.cpp" />
     <ClCompile Include="Source\GameStates\State_Paused.cpp" />
+    <ClCompile Include="Source\GUI\GUI_Element.cpp" />
+    <ClCompile Include="Source\GUI\GUI_Interface.cpp" />
+    <ClCompile Include="Source\GUI\GUI_Label.cpp" />
+    <ClCompile Include="Source\GUI\GUI_Scrollbar.cpp" />
+    <ClCompile Include="Source\GUI\GUI_Textfield.cpp" />
     <ClCompile Include="Source\Managers\EventManager.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Source\Managers\GUI_Manager.cpp" />
     <ClCompile Include="Source\Utilities\Window.cpp" />
     <ClCompile Include="Source\Managers\StateManager.cpp" />
   </ItemGroup>
@@ -147,8 +153,17 @@
     <ClInclude Include="Source\GameStates\State_Intro.h" />
     <ClInclude Include="Source\GameStates\State_MainMenu.h" />
     <ClInclude Include="Source\GameStates\State_Paused.h" />
+    <ClInclude Include="Source\GUI\GUI_Element.h" />
+    <ClInclude Include="Source\GUI\GUI_Event.h" />
+    <ClInclude Include="Source\GUI\GUI_Interface.h" />
+    <ClInclude Include="Source\GUI\GUI_Label.h" />
+    <ClInclude Include="Source\GUI\GUI_Scrollbar.h" />
+    <ClInclude Include="Source\GUI\GUI_Style.h" />
+    <ClInclude Include="Source\GUI\GUI_Textfield.h" />
     <ClInclude Include="Source\Managers\EventManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Source\Managers\FontManager.h" />
+    <ClInclude Include="Source\Managers\GUI_Manager.h" />
     <ClInclude Include="Source\Managers\ResourceManager.h" />
     <ClInclude Include="Source\Managers\SharedContext.h" />
     <ClInclude Include="Source\Managers\TextureManager.h" />
@@ -179,6 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Fonts\arial.ttf" />
+    <Font Include="Resources\Fonts\Vegur-Regular.otf" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Configurations\keys.cfg" />
@@ -187,6 +203,16 @@
     <None Include="Configurations\Characters\EnemyList.list" />
     <None Include="Configurations\Characters\Player.char" />
     <None Include="Configurations\Characters\Rat.char" />
+    <None Include="Configurations\fonts.cfg" />
+    <None Include="Configurations\GUI_Interfaces\MainMenu.interface" />
+    <None Include="Configurations\GUI_Interfaces\Test.interface" />
+    <None Include="Configurations\GUI_Styles\MainMenu.style" />
+    <None Include="Configurations\GUI_Styles\MainMenuLabel.style" />
+    <None Include="Configurations\GUI_Styles\MainMenuTitle.style" />
+    <None Include="Configurations\GUI_Styles\Test.style" />
+    <None Include="Configurations\GUI_Styles\Test2.style" />
+    <None Include="Configurations\GUI_Styles\TestInterface.style" />
+    <None Include="Configurations\GUI_Styles\TestScrollbar.style" />
     <None Include="Configurations\Maps\map1.map" />
     <None Include="Configurations\Maps\map2.map" />
     <None Include="Configurations\Spritesheets\Player.sheet" />

@@ -28,8 +28,11 @@ private:
 	sf::Time m_elapsed;
 
 	//Managers
-	StateManager m_stateManager;
 	SharedContext m_context;
+	StateManager m_stateManager;
+	TextureManager m_textureManager;
+	FontManager m_fontManager;
+	GUI_Manager m_guiManager;
 
 	sf::Texture m_texture;
 	sf::Sprite m_sprite;

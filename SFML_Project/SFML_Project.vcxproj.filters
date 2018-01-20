@@ -51,6 +51,24 @@
     <ClCompile Include="Source\GameStates\State_Paused.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\GUI\GUI_Element.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GUI\GUI_Interface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Managers\GUI_Manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GUI\GUI_Label.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GUI\GUI_Scrollbar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GUI\GUI_Textfield.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -102,6 +120,33 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\GameStates\State_Paused.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Managers\FontManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GUI\GUI_Style.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GUI\GUI_Element.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GUI\GUI_Interface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Managers\GUI_Manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GUI\GUI_Event.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GUI\GUI_Label.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GUI\GUI_Scrollbar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GUI\GUI_Textfield.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -166,6 +211,7 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Fonts\arial.ttf" />
+    <Font Include="Resources\Fonts\Vegur-Regular.otf" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Configurations\keys.cfg" />
@@ -180,5 +226,15 @@
     <None Include="Configurations\Maps\map2.map" />
     <None Include="Configurations\Spritesheets\Player.sheet" />
     <None Include="Configurations\Spritesheets\Rat.sheet" />
+    <None Include="Configurations\GUI_Styles\MainMenu.style" />
+    <None Include="Configurations\GUI_Styles\MainMenuLabel.style" />
+    <None Include="Configurations\GUI_Styles\MainMenuTitle.style" />
+    <None Include="Configurations\GUI_Styles\Test.style" />
+    <None Include="Configurations\GUI_Styles\Test2.style" />
+    <None Include="Configurations\GUI_Styles\TestInterface.style" />
+    <None Include="Configurations\GUI_Styles\TestScrollbar.style" />
+    <None Include="Configurations\GUI_Interfaces\MainMenu.interface" />
+    <None Include="Configurations\GUI_Interfaces\Test.interface" />
+    <None Include="Configurations\fonts.cfg" />
   </ItemGroup>
 </Project>

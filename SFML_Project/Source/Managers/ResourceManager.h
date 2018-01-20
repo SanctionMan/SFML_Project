@@ -92,12 +92,9 @@ private:
 			paths.close();
 			return;
 		}
-		std::cerr <<
-			"! Failed loading the path file: "
-			<< l_pathFile << std::endl;
+		std::cerr << "! Failed loading the path file: " << l_pathFile << std::endl;
 	}
 
-	std::unordered_map<std::string,
-	std::pair<T*, unsigned int>> m_resources;
+	std::unordered_map < std::string, std::pair < T*, unsigned int >> m_resources;
 	std::unordered_map<std::string, std::string> m_paths;
 };
