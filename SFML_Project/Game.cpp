@@ -3,7 +3,7 @@
 
 
 Game::Game()
-: m_window("GAME OVER SUKA", sf::Vector2u(800, 600)), 
+: m_window("Dungeon Crawler", sf::Vector2u(800, 600)), 
 m_stateManager(&m_context), 
 m_guiManager(m_window.GetEventManager(), &m_context)
 {

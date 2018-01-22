@@ -13,7 +13,7 @@ void State_Intro::OnCreate() {
 	textureMgr->RequireResource("Intro");
 	m_introSprite.setTexture(*textureMgr->GetResource("Intro"));
 	m_introSprite.setOrigin(textureMgr->GetResource("Intro")->getSize().x / 2.0f, textureMgr->GetResource("Intro")->getSize().y / 2.0f);
-	m_introSprite.setPosition(windowSize.x / 2.0f, windowSize.y / 2.0f);
+	m_introSprite.setPosition(windowSize.x / 2.0f, windowSize.y / 3.0f);
 
 	textureMgr->RequireResource("IntroBackground");
 	sf::Texture *bg_texture = textureMgr->GetResource("IntroBackground");
