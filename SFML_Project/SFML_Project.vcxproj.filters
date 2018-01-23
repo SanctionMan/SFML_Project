@@ -208,6 +208,12 @@
     <Image Include="Resources\Textures\Wood_background.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Resources\Textures\Interface.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Textures\introtest.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Font Include="Resources\Fonts\arial.ttf" />

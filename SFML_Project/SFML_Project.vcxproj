@@ -183,7 +183,9 @@
     <Image Include="Resources\Textures\bg3.png" />
     <Image Include="Resources\Textures\gradients.png" />
     <Image Include="Resources\Textures\GUI_spritesheet.png" />
+    <Image Include="Resources\Textures\Interface.png" />
     <Image Include="Resources\Textures\intro.png" />
+    <Image Include="Resources\Textures\introtest.png" />
     <Image Include="Resources\Textures\Mushroom.png" />
     <Image Include="Resources\Textures\Paper_background.png" />
     <Image Include="Resources\Textures\PlayerSheet.png" />
