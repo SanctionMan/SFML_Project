@@ -1,7 +1,7 @@
-#include "AnimationDirectional.h"
+#include "Anim_Directional.h"
 #include "SpriteSheet.h"
 
-void AnimationDirectional::FrameStep()
+void Anim_Directional::FrameStep()
 {
 	if (m_frameStart < m_frameEnd) { ++m_frameCurrent; }
 	else { --m_frameCurrent; }
@@ -15,7 +15,7 @@ void AnimationDirectional::FrameStep()
 	}
 }
 
-void AnimationDirectional::CropSprite()
+void Anim_Directional::CropSprite()
 {
 	sf::IntRect rect(m_spriteSheet->GetSpriteSize().x * m_frameCurrent,
 		m_spriteSheet->GetSpriteSize().y * (m_frameRow + (short)m_spriteSheet->GetDirection()),
@@ -23,7 +23,7 @@ void AnimationDirectional::CropSprite()
 	m_spriteSheet->CropSprite(rect);
 }
 
-void AnimationDirectional::ReadIn(std::stringstream& l_stream)
+void Anim_Directional::ReadIn(std::stringstream& l_stream)
 {
 	l_stream >> m_frameStart >> m_frameEnd >> m_frameRow
 		>> m_frameTime >> m_frameActionStart >> m_frameActionEnd;

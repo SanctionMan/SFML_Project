@@ -1,34 +1,38 @@
 #include "Game.h"
 
-
-
-Game::Game()
-: m_window("Dungeon Crawler", sf::Vector2u(800, 600)), 
-m_stateManager(&m_context), 
+Game::Game() : m_window("Chapter 11", sf::Vector2u(800, 600)),
+m_entityManager(&m_systemManager, &m_textureManager), m_stateManager(&m_context),
 m_guiManager(m_window.GetEventManager(), &m_context)
 {
 	m_clock.restart();
-	srand(unsigned int(time(nullptr)));
+	srand(time(nullptr));
+
+	m_systemManager.SetEntityManager(&m_entityManager);
 
 	m_context.m_wind = &m_window;
 	m_context.m_eventManager = m_window.GetEventManager();
 	m_context.m_textureManager = &m_textureManager;
 	m_context.m_fontManager = &m_fontManager;
+	m_context.m_systemManager = &m_systemManager;
+	m_context.m_entityManager = &m_entityManager;
 	m_context.m_guiManager = &m_guiManager;
 
-	m_stateManager.SwitchTo(StateType::Intro);
+	// Debug:
+	m_systemManager.m_debugOverlay = &m_context.m_debugOverlay;
+	m_fontManager.RequireResource("Main"); // new
 
-	m_fontManager.RequireResource("Main");
+	m_stateManager.SwitchTo(StateType::Intro);
 }
 
-
-Game::~Game()
-{
+Game::~Game() {
 	m_fontManager.ReleaseResource("Main"); // new
 }
 
-void Game::Update()
-{
+sf::Time Game::GetElapsed() { return m_clock.getElapsedTime(); }
+void Game::RestartClock() { m_elapsed = m_clock.restart(); }
+Window* Game::GetWindow() { return &m_window; }
+
+void Game::Update() {
 	m_window.Update();
 	m_stateManager.Update(m_elapsed);
 	m_context.m_guiManager->Update(m_elapsed.asSeconds());
@@ -39,10 +43,9 @@ void Game::Update()
 	}
 }
 
-void Game::Render()
-{
+void Game::Render() {
 	m_window.DrawStart();
-	//RENDER
+	// Render here.
 	m_stateManager.Draw();
 
 	sf::View CurrentView = m_window.GetRenderWindow()->getView();
@@ -50,15 +53,16 @@ void Game::Render()
 	m_context.m_guiManager->Render(m_window.GetRenderWindow());
 	m_window.GetRenderWindow()->setView(CurrentView);
 
+	// Debug.
+	if (m_context.m_debugOverlay.Debug()) {
+		m_context.m_debugOverlay.Draw(m_window.GetRenderWindow());
+	}
+	// End debug.
+
 	m_window.DrawEnd();
 }
 
-void Game::LateUpdate()
-{
+void Game::LateUpdate() {
 	m_stateManager.ProcessRequests();
 	RestartClock();
 }
-
-sf::Time Game::GetElapsed(){ return m_clock.getElapsedTime(); }
-Window* Game::GetWindow(){ return &m_window; }
-void Game::RestartClock(){ m_elapsed = m_clock.restart(); }

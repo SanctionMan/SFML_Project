@@ -1,8 +1,8 @@
 #pragma once
-#include "AnimationBase.h"
+#include "Anim_Base.h"
 #include "Directions.h"
 
-class AnimationDirectional : public AnimationBase {
+class Anim_Directional : public Anim_Base {
 protected:
 	void FrameStep();
 	void CropSprite();
